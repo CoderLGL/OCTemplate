@@ -1,0 +1,51 @@
+//
+//  OC-Prefix.pch
+//  OCTemplate
+//
+//  Created by LGL on 2022/12/16.
+//
+/**
+ 
+ 1.新建PCH(Xcode 10)
+
+ 打开你的Xcode工程. 在Supporting Files目录下,选择 File > New > File > iOS > Other > PCH File
+ 假设你的项目名称为xxx, 你的PCH 文件的名字为xxx-Prefix.pch
+ 2.找到 Project > Build Settings > 搜索 “Prefix“；
+
+ "Apple Clang -Language" 栏目中你将会看到 Prefix Header 关键字；
+
+ 设置Prefix Header的值为:$(SRCROOT)/你的项目名称/你的pch文件名称
+ 如：$(SRCROOT)/xxx/xxx-Prefix.pch
+ xxx为项目名称
+
+ 将Precompile Prefix Header为YES，预编译后的pch文件会被缓存起来，可以提高编译速度。
+ 
+ */
+
+
+#ifndef OC_Prefix_pch
+#define OC_Prefix_pch
+
+// 全局宏
+#import "UtilsMacros.h"
+#import "UILabel+EX.h"
+
+
+//基础类
+#import "ThemeManager.h"
+
+
+//第三方
+#import <Masonry/Masonry.h>
+#import <MJRefresh/MJRefresh.h>
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <MJExtension/MJExtension.h>
+#import <SDWebImage/SDWebImage.h>
+#import "RJBadgeKit.h"
+
+
+
+
+
+
+#endif /* OC_Prefix_pch */
